@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MVCTicketDemoCore.Models.TBLMovieDetails>
+@{
+    ViewData["Title"] = "movieList";
+}
+<div>
+    <h2>@Html.ActionLink("List All Movies ", "AllMoviesList", "Movies")</h2>
+    <h4>@Html.ActionLink("Create New Movies ", "CreateMovie", "Movies")</h4>
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <div style="width: 18rem;">
+                <img src="@Html.DisplayFor(modelItem => item.PosterUrl)">
+                <div>
+                    <h5>@Html.DisplayFor(modelItem => item.MovieName)</h5>
+                    <p>Genre:- @Html.DisplayFor(modelItem => item.Genre)</p>
+                    <p>Language:-@Html.DisplayFor(modelItem => item.Language)</p>
+                    <p>Description:-@Html.DisplayFor(modelItem => item.Description)</p>
+
+                   
+
+
+                    <h5>
+                        <a href="@Url.Action("DeleteMovieByIDmvc","Movies", new {id=item.MovieId })"
+                       class="btn btn-primary btn-lg">Delete Movie</a>
+                    </h5>
+                    <h5>
+                            <a href="@Url.Action("GetMoviesByIdmvc","Movies", new {id=item.MovieId })"
+                           class="btn btn-primary btn-lg">Details</a>
+                        </h5>
+
+                    @*<a asp-controller="MovieDetails" asp-action="Details" data-id="@item.MovieId"> Details 1 ProductName</a>
+                @{
+                ViewBag.id = item.MovieId;
+                int Myid = @item.MovieId;
+                }
+
+                @Html.ActionLink("Details 3", "Details", "MovieDetails", new { id = item.MovieId }, htmlAttributes: null)
+                @Html.ActionLink("Details 4", "Details", "MovieDetails", new { id = Myid }, htmlAttributes: null)*@
+                </div>
+            </div>
+        </div>
+    }
+
+
+    @*var @url = "/MovieDetails/Details/";
+
+
+
+    <a href="@url/@item.MovieId">Details 2 click me for send data()</a>*@
+
+
+
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index","Home")
+</div>
+
+
+
+
+

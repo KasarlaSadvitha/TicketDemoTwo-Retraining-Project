@@ -1,0 +1,62 @@
+﻿@model MVCTicketDemoCore.Models.TBLUserInfo
+
+@{
+    ViewData["Title"] = "AddUsermvcc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddUsermvcc</h1>
+
+<h4>TBLUserInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddUsermvcc">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="IdUs" class="control-label"></label>
+                <input asp-for="IdUs" class="form-control" />
+                <span asp-validation-for="IdUs" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="UserRole" class="control-label"></label>
+                <input asp-for="UserRole" class="form-control" />
+                <span asp-validation-for="UserRole" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileNumber" class="control-label"></label>
+                <input asp-for="MobileNumber" class="form-control" />
+                <span asp-validation-for="MobileNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsernameUs" class="control-label"></label>
+                <input asp-for="UsernameUs" class="form-control" />
+                <span asp-validation-for="UsernameUs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PasswordUs" class="control-label"></label>
+                <input asp-for="PasswordUs" class="form-control" />
+                <span asp-validation-for="PasswordUs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RePasswordUs" class="control-label"></label>
+                <input asp-for="RePasswordUs" class="form-control" />
+                <span asp-validation-for="RePasswordUs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

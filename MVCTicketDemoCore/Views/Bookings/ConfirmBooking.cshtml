@@ -1,0 +1,80 @@
+﻿@model MVCTicketDemoCore.Models.Booking
+@{
+    ViewBag.Title = "Tickets Booked Successfully....! ";
+    ViewBag.StartTime = "9:00 am ";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="column">
+    <div class="card" style="width: 18rem;">
+        <img src="@ViewBag.Url" class="card-img-top">
+    </div>
+</div>
+<div class="column">
+    <h2> Movie Name:- @ViewBag.MovieName</h2>
+    <b>Movie Language:-</b>
+    <p>@ViewBag.Language</p>
+    <b>Movie Genre:-</b>
+    <p>@ViewBag.Genre</p>
+    <b>Movie Director:-</b>
+    <p>@ViewBag.Director</p>
+    <b>Movie duration:-</b>
+    <p>@ViewBag.Duretion min.</p>
+    <b>Movie releaseDate:-</b>
+    <p>@ViewBag.ReleaseDate</p>
+</div>
+<div class="row">
+    <table>
+
+
+
+        <tr>
+            <td><b>Show Starting Time:-</b></td>
+            <td>@ViewBag.StartTime</td>
+
+        </tr>
+        <tr>
+            <td><b>Show Date:-</b></td>
+            <td>@Model.Date</td>
+
+        </tr>
+        <tr>
+            <td><b>Price per seat Rs.:-</b></td>
+            <td>@ViewBag.Pricepp </td>
+
+        </tr>
+        <tr>
+            <td><b>User Name:-</b></td>
+            <td>@ViewBag.UserName</td>
+            <td>@ViewBag.US</td>
+
+        </tr>
+
+        <tr>
+            <td><b>Total Ticket(Seat) Booked:-</b></td>
+            <td>@Model.TotalTickets</td>
+
+        </tr>
+
+        <tr>
+            <td><b>Total Cost :-</b></td>
+            <td>@Model.TotalCost</td>
+
+        </tr>
+
+    </table>
+</div>
+<h5>
+    <a href="@Url.Action("GetMoviesByIdmvc","Movies", new {id=ViewBag.MovieId })"
+       class="btn btn-primary btn-lg">Your Movie Details</a>
+</h5>
+<div>
+    <a asp-action="Index" asp-controller="Home">Back to Home</a>
+</div>
+
+
+
+
+

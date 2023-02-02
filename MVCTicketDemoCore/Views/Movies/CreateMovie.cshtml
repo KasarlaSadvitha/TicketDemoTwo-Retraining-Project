@@ -1,0 +1,74 @@
+﻿@model MVCTicketDemoCore.Models.TBLMovieDetails
+
+@{
+    ViewData["Title"] = "AddMoviemvc";
+}
+
+<h1>AddMoviemvc</h1>
+
+<h4>TBLMovieDetails</h4>
+<hr />
+<div >
+    <div >
+        <form asp-action="AddMoviemvcc">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div >
+                <label asp-for="MovieId" ></label>
+                <input asp-for="MovieId"  />
+                <span asp-validation-for="MovieId" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="MovieName" ></label>
+                <input asp-for="MovieName" />
+                <span asp-validation-for="MovieName" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="Genre" ></label>
+                <input asp-for="Genre"  />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="Description" ></label>
+                <input asp-for="Description"  />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="Language" ></label>
+                <input asp-for="Language"  />
+                <span asp-validation-for="Language" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="ReleaseDate" ></label>
+                <input asp-for="ReleaseDate"  />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="Duration" ></label>
+                <input asp-for="Duration"  />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="Director" ></label>
+                <input asp-for="Director"  />
+                <span asp-validation-for="Director" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="PosterUrl"></label>
+                <input asp-for="PosterUrl" />
+                <span asp-validation-for="PosterUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

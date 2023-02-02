@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVCTicketDemoCore.Models.Booking>
+
+@{
+
+}
+
+<h2>Booked Tickets</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalTickets)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalTickets)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MovieName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

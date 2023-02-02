@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MVCTicketDemoCore.Models.TBLMovieDetails>
+@{
+    ViewData["Title"] = "movieList";
+}
+<h3>@ViewData["Title"]</h3>
+<div>
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <div style="width: 18rem;">
+                <img src="@Html.DisplayFor(modelItem => item.PosterUrl)">
+                <div>
+                    <h5>@Html.DisplayFor(modelItem => item.MovieName)</h5>
+                    <p>Genre:- @Html.DisplayFor(modelItem => item.Genre)</p>
+                    <p>Language:-@Html.DisplayFor(modelItem => item.Language)</p>
+
+                    <h5>
+                        <a href="@Url.Action("GetMoviesByIdmvc","Movies", new {id=item.MovieId })"
+                       class="btn btn-primary btn-lg">Details</a>
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index","Home")
+</div>
+
+
+
+
+

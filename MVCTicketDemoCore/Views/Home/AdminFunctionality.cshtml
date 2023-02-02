@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "AdminFunctionality";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AdminFunctionality</h1>
+
+
+<h3><button>@Html.ActionLink("List Of All Movies for Admin", "AllMoviesListAdmin", "Movies")</button></h3>
+<br />
+<h3><button>@Html.ActionLink("List of All Users for Admin", "AllUsersListAdmin", "Users")</button></h3>
+<br />
+<h3><button>@Html.ActionLink("List of All Bookings for Admin", "AllBookingsListAdmin", "Bookings")</button></h3>
+<br />
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

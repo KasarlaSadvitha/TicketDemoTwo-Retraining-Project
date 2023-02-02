@@ -1,0 +1,49 @@
+﻿@model MVCTicketDemoCore.Models.TBLMovieDetails
+@{
+    ViewBag.Title = "BookingMovie1";
+}
+
+<h2>BookingMovie1</h2>
+
+<div>
+    <div>
+        <h2> Movie Name:- @Model.MovieName</h2>
+        <b>Movie Language:-</b>
+        <p>@Model.Language</p>
+        <b>Movie Genre:-</b>
+        <p>@Model.Genre</p>
+        <b>Movie Director:-</b>
+        <p>@Model.Director</p>
+        <b>Movie duration:-</b>
+        <p>@Model.Duration min.</p>
+        <b>Movie releaseDate:-</b>
+        <p>@Model.ReleaseDate</p>
+        <b>Movie Id:-</b>
+        <p>@Model.MovieId</p>
+    </div>
+</div>
+<div style="margin:2rem;">
+    @using (Html.BeginForm("ConfirmBooking", "Bookings", FormMethod.Post))
+    {
+        <p>Enter MovieId:- </p>
+        @Html.TextBox("MovieId")
+        <p>Enter Total No Of Ticket:- </p>
+        @Html.TextBox("TotalTickets")
+
+        <input type="submit" class="btn btn-primary" value="Book Tickets & Payment will be charged On the Spot of the Theater">
+    }
+
+    @*
+    <a asp-controller="Employees" asp-action="Create" asp-route-
+    FirstName="@item.FirstName" asp-route-MiddleName="@item.MiddleName" asp-
+    route-LastName="@item.LastName" asp-route-ADUsername="@item.ADUsername" asp-
+    route-ADId="@item.ADId" asp-route-ADName="@item.ADName" asp-route-
+    ADemail="@item.ADemail">Add Employee</a>
+    *@
+
+</div>
+
+
+
+
+

@@ -1,0 +1,75 @@
+﻿@inject IHttpContextAccessor _context;
+@model IEnumerable<MVCTicketDemoCore.Models.TBLMovieDetails>
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.User = @_context.HttpContext.Session.GetString("UserName");
+
+    ViewBag.Name = @_context.HttpContext.Session.GetString("UserName");
+    string name = @_context.HttpContext.Session.GetString("UserName");
+    string role = @_context.HttpContext.Session.GetString("UserRole");
+    string demoname = "Sahithi";
+
+}
+
+
+
+<div class="jumbotron">
+    <h1> Movies World </h1>
+    
+    <h3>@Html.ActionLink("List All Movies ", "AllMoviesList", "Movies")</h3>
+    @if (role == "Admin")//AdminFunctionality
+    {
+        <h3>@Html.ActionLink("Admin Functionality", "AdminFunctionality", "Home")</h3>
+        @*<h2>@Html.ActionLink("List All Movies for Admin", "AllMoviesListAdmin", "Movies")</h2>*@
+    }
+    @*<ul>
+        <li>UserName : @_context.HttpContext.Session.GetString("UserName") </li> //Sadvi
+        <li>User Id: @_context.HttpContext.Session.GetInt32("UserId")</li>//1
+        <li>User Role :@_context.HttpContext.Session.GetString("UserRole")</li>//Admin
+    </ul>*@
+
+  @* <h3>
+        <a href="@Url.Action("GetUsersByNamemvc","Users", new {name= "Sahithi" })"
+           class="btn btn-primary btn-lg">Get User By Name</a>
+    </h3>*@
+
+
+    <p class="lead"> Movies World is an Online Ticket Booking Platform </p>
+    <p><a href="https://yourstory.com/mystory/34466b4724-discover-the-benefits-of-online-movie-ticket-booking" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    
+</div>
+<link href="@Url.Content("~/Content/StyleSheet.css")" rel="stylesheet" type="text/css"/>
+<div class="row">
+  
+        <div class="column">
+        @foreach (var item in Model)
+        {
+            <div>
+                    <div  style="width: 18rem;">
+                    <img src="@Html.DisplayFor(modelItem => item.PosterUrl)" alt="...">
+                    <div>
+                        <h5>@Html.DisplayFor(modelItem => item.MovieName)</h5>
+                        <p>Genre : @Html.DisplayFor(modelItem => item.Genre)</p>
+                        <h5>Movie ID : @Html.DisplayFor(modelItem => item.MovieId)</h5>
+                        <h5>
+                            <a href="@Url.Action("GetMoviesByIdmvc","Movies", new {id=item.MovieId })"
+                           class="btn btn-primary btn-lg">Details</a>
+                        </h5>
+                        @if(name != null )
+                        {
+                        <h3>
+                            <a href="@Url.Action("BookingMovie1","Bookings", new {MID=item.MovieId })"
+                           class="btn btn-primary btn-lg">Buytickets</a>
+                        </h3>
+                        }
+
+                        
+
+
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MVCTicketDemoCore.Models.Booking>
+
+@{
+    ViewData["Title"] = "GetBookingsmvc";
+}
+
+<h1>GetBookingsmvc</h1>
+<h4>@Html.ActionLink("Create New Booking ", "AddBookingmvc", "Bookings")</h4>
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalTickets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalTickets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+           @* <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+}
+        <div>
+            <a asp-action="Index" asp-controller="Home">Back to Home</a>
+        </div>
+        <div>
+            <a asp-action="AdminFunctionality" asp-controller="Home">Back to Admin Functionality Page</a>
+        </div>
+    </tbody>
+</table>
+

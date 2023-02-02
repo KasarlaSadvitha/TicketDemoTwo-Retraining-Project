@@ -1,0 +1,64 @@
+﻿@model MVCTicketDemoCore.Models.TBLUserInfo
+
+@{
+    ViewData["Title"] = "GetUsersByNamemvc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1> Your Profile </h1>
+
+<div>
+    <h4>TBLUserInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdUs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdUs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserRole)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserRole)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MobileNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UsernameUs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UsernameUs)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PasswordUs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PasswordUs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RePasswordUs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RePasswordUs)
+        </dd>*@
+    </dl>
+</div>
+<div>
+   @* @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    <div>
+        <a asp-action="Index" asp-controller="Home">Back to Home</a>
+    </div>
+</div>
+
